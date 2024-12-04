@@ -27,8 +27,10 @@ services:
     command: serve --host 0.0.0.0 --debugger --reload
     environment:
       - FLASK_DEBUG=true
+      - UDATA_SETTINGS=/udata/udata.cfg
     volumes:
       - udata-fs:/udata/fs
+      - ./udata.cfg:/udata/udata.cfg
     ports:
       - "${UDATA_HTTP_EXPOSED:-7000}:7000"
 
