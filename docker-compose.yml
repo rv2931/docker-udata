@@ -4,14 +4,14 @@ services:
     volumes:
       - mongo-data:/data/db
     ports:
-      - "27017:27017"
+      - "${UDATA_MONGODB_EXPOSED:-27017}:27017"
 
   redis:
     image: redis
     volumes:
       - redis-data:/data
     ports:
-    - "6379:6379"
+    - "${UDATA_REDIS_EXPOSED:-6379}:6379"
 
   udata:
     build: .
