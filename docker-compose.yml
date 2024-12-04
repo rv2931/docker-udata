@@ -24,7 +24,7 @@ services:
     volumes:
       - udata-fs:/udata/fs
     ports:
-      - "7000:7000"
+      - "${UDATA_HTTP_EXPOSED:-7000}:7000"
 
 volumes:
   udata-fs:
